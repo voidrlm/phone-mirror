@@ -113,6 +113,14 @@ def free_udp_port():
         return s.getsockname()[1]
 
 
+
+def uxplay_install_command():
+    """The command that installs uxplay with this system's package manager, or None (e.g. Arch: AUR)."""
+    for manager, cmd in (("dnf", ["dnf", "install", "-y"]), ("apt-get", ["apt-get", "install", "-y"])):
+        if shutil.which(manager):
+            return cmd + ["uxplay"]
+    return None
+
 class Receiver:
     """A running UxPlay process whose output is delivered line by line."""
 
@@ -366,7 +374,7 @@ class Window(Adw.ApplicationWindow):
         subtitle = ""
 
         if self.server_state == "missing":
-            can_install = bool(shutil.which("pkexec") and shutil.which("dnf"))
+            can_install = bool(shutil.which("pkexec") and uxplay_install_command())
             self._set_status(
                 "dialog-warning-symbolic",
                 "AirPlay Receiver Not Installed",
@@ -753,7 +761,7 @@ class Window(Adw.ApplicationWindow):
         self.server_state = "installing"
         self._update_ui()
         try:
-            proc = Gio.Subprocess.new(["pkexec", "dnf", "install", "-y", "uxplay"], Gio.SubprocessFlags.NONE)
+            proc = Gio.Subprocess.new(["pkexec", *uxplay_install_command()], Gio.SubprocessFlags.NONE)
         except GLib.Error as err:
             self._log(f"could not start the installer: {err.message}")
             self.start_server()
