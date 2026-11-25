@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Phone Mirror
+Comment=Mirror your iPhone or iPad screen with AirPlay
+Exec=phone-mirror
+Icon=io.github.voidrlm.PhoneMirror
+Terminal=false
+Categories=AudioVideo;Video;Utility;
+Keywords=iPhone;iPad;iOS;AirPlay;Screen;Mirroring;Cast;Share;
+StartupNotify=true

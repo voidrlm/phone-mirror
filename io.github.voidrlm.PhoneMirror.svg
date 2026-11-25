@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#62a0ea"/>
+      <stop offset="1" stop-color="#1a5fb4"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#99c1f1"/>
+      <stop offset="1" stop-color="#dc8add"/>
+    </linearGradient>
+  </defs>
+  <!-- monitor -->
+  <rect x="10" y="22" width="108" height="72" rx="9" fill="url(#bg)"/>
+  <rect x="17" y="29" width="94" height="58" rx="4" fill="#241f31"/>
+  <rect x="50" y="94" width="28" height="10" fill="#1a5fb4"/>
+  <rect x="36" y="103" width="56" height="7" rx="3.5" fill="#1c71d8"/>
+  <!-- phone mirrored on the monitor -->
+  <rect x="50" y="34" width="28" height="48" rx="5" fill="#f6f5f4"/>
+  <rect x="53" y="38" width="22" height="40" rx="2.5" fill="url(#screen)"/>
+  <!-- cast waves -->
+  <path d="M86 50a12 12 0 0 1 0 16" fill="none" stroke="#f6f5f4" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M93 44a21 21 0 0 1 0 28" fill="none" stroke="#f6f5f4" stroke-width="3.5" stroke-linecap="round" opacity=".6"/>
+  <path d="M42 50a12 12 0 0 0 0 16" fill="none" stroke="#f6f5f4" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M35 44a21 21 0 0 0 0 28" fill="none" stroke="#f6f5f4" stroke-width="3.5" stroke-linecap="round" opacity=".6"/>
+</svg>
